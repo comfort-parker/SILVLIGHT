@@ -1,0 +1,109 @@
+.testmonial{
+    margin: 80px auto;
+    padding: 0 80px;
+    position: relative;
+}
+.next-btn{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    background: rgba(128, 83, 0, 0.6); 
+    color: black;
+    padding: 15px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+
+}
+.back-btn{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    background: rgba(163, 120, 10, 0.6); 
+;
+    color: rgb(81, 38, 38);
+    padding: 15px;
+    width: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.slider{
+    overflow: hidden;
+}
+.slider ul{
+display: flex;
+width: 200%;
+overflow-x: hidden;
+transition: 0.5s;
+
+}
+.slider ul li{
+    width: 50%;
+    padding: 20px;
+    list-style: none;
+}
+.slide{
+    box-shadow: 0 0 20px rgba(222, 120, 18, 0.05);
+    padding: 40px;
+    border-radius: 10px;
+    line-height: 1.4;
+    color: #676767;
+}
+.slide img{
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-right: 10px;
+    border: 4px solid #a07e21;
+}
+.userinfo{
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.userinfo h3{
+    font-size: 20px;
+    color: #212ea0;
+    margin-bottom: 5px;
+}
+@media(max-width: 800px){
+    .testmonial{
+        padding: 0 40px;
+    }
+    .next-btn, .back-btn{
+        width: 40px;
+        padding: 10px;
+    }
+    .tetmonial ul li{
+        padding: 10px;
+    }
+    .slider ul li{
+        width: 100%;
+    }
+    .slide{
+        padding: 10px;
+    }
+    .slide img{
+        border: 3px solid #d9a60c;
+    }
+}
+@media(max-width: 600px){
+    .userinfo{
+        display: block;
+        margin-bottom: 10px;
+        font-size: 12px;
+    }
+    .userinfo h3{
+        margin-bottom: 0;
+        font-size: 15px;
+    }
+    .slider p{
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+}

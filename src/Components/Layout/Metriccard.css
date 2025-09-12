@@ -1,0 +1,55 @@
+.metric-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.metric-card:hover {
+  transform: translateY(-5px);
+}
+
+.metric-content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.metric-icon {
+  font-size: 2rem;
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+}
+
+.metric-icon.users {
+  background-color: #4e73df; /* Blue */
+}
+
+.metric-icon.products {
+  background-color: #1cc88a; /* Green */
+}
+
+.metric-icon.orders {
+  background-color: #f6c23e; /* Yellow */
+}
+
+.metric-icon.revenue {
+  background-color: #e74a3b; /* Red */
+}
+
+.metric-content h3 {
+  font-size: 16px;
+  margin: 0;
+  color: #333;
+}
+
+.metric-content p {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 5px 0 0;
+  color: #111;
+}

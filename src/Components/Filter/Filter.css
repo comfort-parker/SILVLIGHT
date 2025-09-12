@@ -1,0 +1,57 @@
+.filter-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.search-box {
+  flex: 1;
+  padding: 10px 15px;
+  border: 1px solid #e1b813;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.category-filter {
+  padding: 10px 15px;
+  border: 1px solid #cfa126;
+  border-radius: 6px;
+  font-size: 1rem;
+  background: #fff;
+  cursor: pointer;
+}
+.category-filter option {
+  padding: 10px;
+}
+.category-filter option:hover {
+  background-color: #f0f0f0;
+}
+.category-filter option:focus {
+  background-color: #e1b813;
+  color: white;
+}
+.category-filter option:checked {
+  background-color: #cfa126;
+  color: white;
+}
+.category-filter option:active {
+  background-color: #cfa126;
+  color: white;
+}
+.category-filter option:disabled {
+  background-color: #f9f9f9;
+  color: #ccc;
+  cursor: not-allowed;
+}
+.category-filter option[selected] {
+  background-color: #cfa126;
+  color: white;
+}
+.category-filter option:focus-visible {
+  outline: 2px solid #cfa126;
+}
+.category-filter option:hover {
+  background-color: #f0f0f0;
+}

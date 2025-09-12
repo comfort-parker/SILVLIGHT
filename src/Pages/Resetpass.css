@@ -1,0 +1,133 @@
+/* Forgotpass.css */
+
+/* General layout */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* background: #f9fafc; */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* Hero section */
+.log-hero {
+  position: relative;
+  height: 40vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.log-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-text {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  padding: 0 20px;
+}
+
+.hero-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Auth form wrapper */
+.auth-Wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+/* .auth-form-container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 420px;
+  padding: 30px;
+} */
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #222;
+}
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+/* .auth-form input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.95rem;
+  transition: 0.3s;
+} */
+
+/* .auth-form input:focus {
+  border-color: #4cafef;
+  box-shadow: 0 0 0 3px rgba(76, 175, 239, 0.2);
+} */
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background: #dcab1a;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-form button:hover {
+  background: #dcb43a;
+}
+
+.auth-form button:disabled {
+  background: #f2e2a8;
+  cursor: not-allowed;
+}
+
+.auth-form p {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.9rem;
+}
+
+.auth-form p.success {
+  color: #28a745;
+}
+
+.auth-form p.error {
+  color: #dc3545;
+}

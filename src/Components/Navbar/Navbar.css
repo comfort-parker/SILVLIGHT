@@ -1,0 +1,144 @@
+nav {
+  width: 100%;
+  background: transparent;
+  color: white;
+  position: fixed;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 4px 0;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.logo{
+  width: 50px;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline-block;
+  margin: 5px 20px;
+  font-size: 15px;
+}
+.dark-nav{
+  background: rgba(206, 145, 15, 0.6);
+  transition: 0.5s;
+}
+
+.btn {
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 10px 20px;
+  border: 0.5px solid #f5f4f2;
+  background-color: #e78c04;
+  color: whitesmoke; 
+  cursor: pointer;
+  border-radius: 50px;
+  
+ 
+}
+.menu-icon {
+  display: none;
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.solid-nav {
+  background: standard rgb(224, 161, 12); /* white background */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  color: black;
+}
+
+@media (max-width: 1000px){
+  .logo{
+    width:  140px;
+  }
+  nav ul li{
+    margin: 10px 15px;
+    
+  }
+}
+@media (max-width: 1000px){
+  nav{
+    padding: 15px 0;
+  }
+  nav ul{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(239, 173, 31, 0.6);
+
+    width: 200px;
+    z-index: -1;
+    padding-top: 70px;
+    transition: 0.5s;
+  }
+  nav ul li{
+    display: block;
+    margin: 25px 40px;
+  
+  }
+  .menu-icon {
+    display: block;
+    color: white;
+    width: 40px;
+    cursor: pointer;
+  }
+}
+.hide-menu {
+  right: -250px;
+}
+
+
+.cart-icon {
+  position: relative;
+  font-size: 25px;
+  cursor: pointer;
+  margin: 0 45px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+
+
+.cart-icon:hover {
+  color: #e78c04;
+}
+
+.dark-nav .cart-icon {
+  color: white;
+}
+
+.solid-nav .cart-icon {
+  color: black;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  color: #fff;
+  font-weight: 500;
+}
+
+.profile-icon {
+  font-size: 22px;
+  margin-right: 6px;
+}
+
+
+

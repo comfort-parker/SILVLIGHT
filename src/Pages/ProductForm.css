@@ -1,0 +1,176 @@
+.product-form-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-form-container h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.product-form-container label {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.product-form-container input,
+.product-form-container textarea,
+.product-form-container select {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  margin-top: 0.3rem;
+  transition: border 0.2s ease-in-out;
+}
+
+.product-form-container input:focus,
+.product-form-container textarea:focus,
+.product-form-container select:focus {
+  outline: none;
+  border-color: #2563eb; /* Blue border */
+}
+
+
+.checkbox-group {
+  display: flex;
+  align-items: center;   /* ✅ ensures checkbox and text align */
+  gap: 6px;              /* spacing between checkbox and label */
+  margin-top: 10px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  margin: 0;
+  vertical-align: middle;   /* ✅ force vertical alignment */
+}
+
+.checkbox-group label {
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  line-height: 1;           
+}
+
+.product-form-container select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  margin-top: 5px;
+  background-color: #fff;
+  color: #333;
+  appearance: none; /* removes browser default arrow */
+}
+
+.product-form-container select:focus {
+  border-color: #4f46e5;
+  outline: none;
+}
+
+
+
+
+.product-form-container .image-preview {
+  margin-top: 0.5rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+}
+
+.variant-section {
+  margin-top: 1.5rem;
+}
+
+.variant-card {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.variant-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.variant-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.variant-card input {
+  margin-top: 0.2rem;
+}
+
+.remove-btn {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.remove-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.add-variant-btn {
+  background: #2563eb;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s ease-in-out;
+}
+
+.add-variant-btn:hover {
+  background: #1d4ed8;
+}
+
+.submit-btn {
+  width: 100%;
+  background: #16a34a;
+  color: #fff;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.2s ease-in-out;
+}
+
+.submit-btn:hover {
+  background: #15803d;
+}
+
+.submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.error-message {
+  color: #dc2626;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}

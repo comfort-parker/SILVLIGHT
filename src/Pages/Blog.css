@@ -1,0 +1,155 @@
+/* === Blog Hero Section === */
+.blog-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.blog-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.blog-hero .hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+}
+
+.blog-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.blog-hero p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* === Blog Container === */
+.blog-container {
+  max-width: 1600px;
+  margin: 3rem auto;
+  padding: 0 1rem;
+}
+
+.blog-header {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #222;
+}
+
+/* === Blog Grid === */
+.blog-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* === Blog Card === */
+.blog-card {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.blog-card.reverse {
+  flex-direction: row-reverse;
+}
+
+.blog-image-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-media {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.no-media {
+  width: 100%;
+  height: 200px;
+  background: #f4f4f4;
+  border: 1px dashed #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 0.9rem;
+  border-radius: 10px;
+}
+
+/* === Blog Content === */
+.blog-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.blog-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.blog-content .blog-date {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.blog-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.read-more {
+  align-self: flex-start;
+  padding: 0.6rem 1.2rem;
+  background: #d68c0c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.read-more:hover {
+  background: #e48e0d;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .blog-card,
+  .blog-card.reverse {
+    flex-direction: column;
+  }
+
+  .blog-hero h1 {
+    font-size: 2rem;
+  }
+
+  .blog-hero p {
+    font-size: 1rem;
+  }
+}

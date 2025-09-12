@@ -1,0 +1,210 @@
+/* ======= Cart Page Layout ======= */
+.cart-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* ======= Cart Content (Items + Summary) ======= */
+.cart-content {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  flex: 1;
+  width: 1500px;
+  margin: 0 auto;
+}
+
+/* ======= Cart Items Section ======= */
+.cart-items-section {
+  flex: 0 0 65%;  /* items take ~65% width */
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.cart-items-section h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* ======= Each Cart Item ======= */
+.cart-item {
+  display: flex;
+  justify-content: space-between; /* split left/middle/right */
+  align-items: center;
+  gap: 1rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* Left - product image */
+.cart-item-image {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Middle - name & quantity */
+.cart-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+}
+
+.cart-item-details h4 {
+  margin: 0;
+  color: #222;
+}
+
+/* Right - price & remove */
+.cart-item-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+.item-price {
+  font-weight: bold;
+  color: #333;
+}
+
+/* ======= Quantity Controls ======= */
+.quantity-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.qty-btn {
+  padding: 0.3rem 0.7rem;
+  border: 1px solid #ccc;
+  background-color: #f5f5f5;
+  cursor: pointer;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.qty-btn:hover {
+  background-color: #e0e0e0;
+}
+
+.qty-value {
+  min-width: 25px;
+  text-align: center;
+}
+
+/* ======= Remove Button ======= */
+.remove-btn {
+  padding: 0.4rem 0.8rem;
+  background-color: #ff4d4d;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.2s ease;
+}
+
+.remove-btn:hover {
+  background-color: #cc0000;
+}
+
+/* ======= Clear Cart Button ======= */
+.clear-btn {
+  margin-top: 1rem;
+  padding: 0.7rem 1.2rem;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.clear-btn:hover {
+  background-color: #e68900;
+}
+
+/* ======= Cart Summary Card ======= */
+.cart-summary {
+  flex: 0 0 35%;  /* summary takes ~35% width */
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.cart-summary h3 {
+  margin-top: 0;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.cart-summary p {
+  margin: 0.5rem 0;
+  color: #555;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #f3b600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #b58800;
+}
+
+/* ======= Empty Cart ======= */
+.empty-cart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  text-align: center;
+  color: #777;
+  font-size: 1.2rem;
+}
+
+/* ======= Footer ======= */
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+/* ======= Responsive ======= */
+@media (max-width: 900px) {
+  .cart-content {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cart-summary {
+    margin-top: 2rem;
+    position: relative;
+    top: 0;
+  }
+}

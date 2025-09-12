@@ -1,0 +1,199 @@
+/* ========= AdminLetter.css ========= */
+
+/* ===== Container ===== */
+.content-admin-container {
+  margin-left: 2px; /* leave space for sidebar */
+  padding: 2rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: #f9fafc;
+  min-height: 100vh;
+}
+
+.content-admin-container h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+.content-actions {
+  margin-bottom: 2rem;
+}
+
+.content-actions button {
+  margin-right: 1rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.95rem;
+  border: none;
+  border-radius: 6px;
+  background: #0077cc;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.content-actions button:hover {
+  background: #005fa3;
+}
+
+/* ===== Tables ===== */
+.subscribers-table,
+.blogs-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.subscribers-table th,
+.subscribers-table td,
+.blogs-table th,
+.blogs-table td {
+  border: 1px solid #ddd;
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.subscribers-table th,
+.blogs-table th {
+  background: #f1f3f5;
+  font-weight: 600;
+  color: #333;
+}
+
+.subscribers-table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.subscribers-table tr:hover {
+  background: #f0f8ff;
+}
+
+/* Blog action buttons */
+.blogs-table td button {
+  margin-right: 6px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.blogs-table td button:first-child {
+  background: #ffb703; /* edit */
+  color: white;
+}
+
+.blogs-table td button:first-child:hover {
+  background: #e09a00;
+}
+
+.blogs-table td button:last-child {
+  background: #d62828; /* delete */
+  color: white;
+}
+
+.blogs-table td button:last-child:hover {
+  background: #b71c1c;
+}
+
+/* ===== Modals ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  width: 500px;
+  max-width: 95%;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.modal-content form input,
+.modal-content form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.modal-content form input:focus,
+.modal-content form textarea:focus {
+  border-color: #0077cc;
+  outline: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.8rem;
+}
+
+.modal-actions button {
+  padding: 0.6rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s;
+}
+
+/* Green = save / submit */
+.modal-actions button[type="submit"] {
+  background: #28a745;
+  color: #fff;
+}
+.modal-actions button[type="submit"]:hover {
+  background: #1e7e34;
+}
+
+/* Red = cancel */
+.modal-actions button[type="button"] {
+  background: #dc3545;
+  color: #fff;
+}
+.modal-actions button[type="button"]:hover {
+  background: #a71d2a;
+}
+
+.modal-msg {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #444;
+}
+
+/* ===== Animations ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

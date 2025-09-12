@@ -1,0 +1,153 @@
+.products-container {
+  max-width: 1850px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.products-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: bold;
+  color: #333;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 5 images per row */
+  gap: 20px;
+  max-height: 80vh;       /* Control visible height */
+  overflow-y: auto;       /* Vertical scroll when too many rows */
+  padding: 10px;
+}
+  
+.product-card {
+  width: 300px;        
+  height: 420px;       
+  flex: 0 0 auto;
+  background: #fbfcfc;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+  padding: 15px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;  
+  justify-content: space-between;
+  border: #e08c0d 1px solid;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+  width: 100%;           /* Take full width of card */
+  height: 180px;         /* Fixed uniform height */
+  object-fit: cover;     /* Crop but keep aspect ratio */
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #e08c0d;
+  display: block;        /* Prevent inline spacing issues */
+}
+
+
+.product-info {
+  margin-top: 1rem;
+}
+
+.product-name {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.product-price {
+  text-align: left;
+  color: rgb(220, 154, 12);
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.product-description {
+  text-align: left;
+  margin-left: 9px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #555;
+
+  /* Limit to 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* show only 3 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.product-price {
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 8px;
+  font-weight: bold;
+  color: #222;
+}
+
+.add-to-cart-btn {
+  margin-top: auto;   /* pushes button to bottom */
+  width: 95%;
+  padding: 10px 15px;
+  background: #e08c0d;
+  border: 2px solid #e78c04;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: center;
+}
+
+.add-to-cart-btn:hover {
+  background: transparent;
+  color: #e08c0d;
+}
+.view-hero {
+  position: relative;
+  width: 100%;
+  height: 30vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.view-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.view-hero .hero-text {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.view-hero .hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.view-hero .hero-text p {
+  font-size: 1.2rem;
+}

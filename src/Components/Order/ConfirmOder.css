@@ -1,0 +1,109 @@
+.order-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.order-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #7d6e2e;
+  margin-bottom: 1rem;
+}
+
+.order-info {
+  color: #555;
+  margin: 0.25rem 0;
+}
+
+.order-section {
+  border-top: 1px solid #ddd;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+}
+
+.order-section h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.order-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.order-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed #ddd;
+  padding: 0.75rem 0;
+}
+
+.order-item-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.order-item-details {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+.order-item-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.order-item-price {
+  font-weight: bold;
+  color: #333;
+  min-width: 100px;
+  text-align: right;
+}
+
+.order-total {
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  text-align: right;
+}
+
+.pay-btn {
+  display: block;
+  width: 100%;
+  background: #d28819;
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.pay-btn:hover {
+  background: #a16b0d;
+}
+
+.loading {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 1.5rem;
+  color: #666;
+}
+.success-msg {
+  text-align: center;
+  color: #2e7d32;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}

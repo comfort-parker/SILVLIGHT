@@ -1,0 +1,115 @@
+/* ===== Page Layout ===== */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* ensures footer sticks at bottom */
+}
+
+/* Push footer to bottom */
+.auth-wrapper {
+  flex: 1; /* takes all remaining space */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* ===== Hero Section ===== */
+.log-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.log-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+}
+
+.log-hero .hero-text {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+}
+
+.log-hero h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.log-hero p {
+  font-size: 1.1rem;
+}
+
+/* ===== Auth Form ===== */
+.auth-wrapper h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.auth-wrapper form {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* .auth-wrapper input {
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  transition: border 0.3s ease;
+} */
+
+.auth-wrapper input[type="text"],
+.auth-wrapper input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+.auth-wrapper input:focus {
+  border-color: #ffbb00;
+}
+
+.auth-wrapper button {
+  background: #ffae00;
+  color: white;
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.auth-wrapper button:hover {
+  background: #b3983e;
+}
+
+.auth-wrapper p {
+  margin-top: 15px;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #222;
+  color: #fff;
+  text-align: left;
+  padding: 15px 10px;
+  margin-top: auto; /* stick footer at bottom */
+}

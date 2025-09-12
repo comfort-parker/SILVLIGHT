@@ -1,0 +1,132 @@
+.footer {
+  background-color: #ce9d09; /* deep green background */
+  color: #e8f5e9; /* light greenish-white text */
+  padding: 40px 20px 0;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-col h4 {
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  color: white;
+}
+
+.footer-col ul li:hover {
+  text-decoration: underline;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: left;
+  gap: 10px;
+}
+
+.footer-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-text {
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-socials {
+  margin-top: 15px;
+}
+
+.footer-socials a {
+  color: white;
+  margin-right: 10px;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #cda31c; /* lighter green on hover */
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.newsletter-form input {
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+}
+
+.newsletter-form button {
+  background-color: #e4a017; /* light green */
+  color: #f1f0ee;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.newsletter-form button:hover {
+  background-color: #d19110; /* slightly darker green */
+}
+
+.footer-bottom {
+  border-top: 1px solid white;
+  margin-top: 30px;
+  padding: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 14px;
+
+}
+
+.footer-links a {
+  margin-left: 15px;
+  color: white;
+  text-decoration: none;
+  text-align: left;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-links {
+    margin-top: 10px;
+  }
+}
+.footer,
+.footer * {
+  text-align: left !important;
+}

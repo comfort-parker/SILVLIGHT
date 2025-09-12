@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Playwrite+DK+Loopet:wght@100..400&display=swap');
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Playfair Display", serif;
+  
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  background: #f8fdf8;
+  color: #555;
+  
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+  cursor: pointer;
+}
+.container{
+  padding-right: 10%;
+  padding-left: 10%;
+}
+
+.btn {
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 10px 20px;
+  border: none;
+  background-color: #e78c04;
+  color: #bf8219; 
+  cursor: pointer;
+  border-radius: 50px;
+  
+ 
+}
+
+.btn-img {
+  width: 20px;
+  height: 20px; 
+  margin-left: 10px; 
+}
+.btn-center {
+  display: flex; 
+  align-self: center;
+  align-items: center; 
+  justify-content: center; 
+  width: 100%;
+}
+@media (max-width: 1200px){
+  .container{
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+  .btn {
+    padding: 14px 22px;
+  }
+}

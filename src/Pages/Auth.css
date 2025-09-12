@@ -1,0 +1,252 @@
+.log-hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+.log-hero .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.log-hero .hero-text {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  z-index: 1;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.log-hero .hero-text h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.log-hero .hero-text p {
+  font-size: 1.2rem;
+}
+/* Main wrapper with spacing */
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;   /* ✅ ensures at least full viewport */
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Left side image */
+.auth-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 20px;
+}
+
+.auth-image img {
+  max-width: 100%;
+  max-height: 700px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Right side form */
+.auth-form-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  
+}
+
+/* Form styles */
+.auth-form {
+  width: 100%;
+  max-width: 650px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.auth-form h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="email"],
+.auth-form input[type="password"] {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+
+.checkbox-label {
+  font-size: 14px;
+  color: #555;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.auth-form button {
+  padding: 12px;
+  background: #d7a715;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  /* border-radius: 6px; */
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-form button:hover {
+  background: #e6a708;
+}
+
+.auth-form .error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+}
+
+.auth-switch {
+  margin-top: 10px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.auth-link {
+  color: #d85015;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.auth-link:hover {
+  text-decoration: underline;
+}
+
+/* 📱 Responsive: stack on smaller screens */
+@media (max-width: 768px) {
+  .auth-wrapper {
+    flex-direction: column;
+    padding: 20px;
+  }
+  .auth-image {
+    max-height: 250px;
+  }
+}
+
+
+.auth-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  padding: 10px;
+}
+
+.auth-box {
+  display: flex;
+  width: 1800px;        
+  overflow: hidden;
+}
+
+.auth-image {
+  flex: 0.5;            
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0f4f8;
+  padding: 20px;
+}
+
+.auth-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.auth-form-container {
+  flex: 0.6;           
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+
+/* Make footer stick at bottom */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  flex: 1; /* pushes footer to bottom */
+}
+
+footer {
+  background: #222;
+  color: #fff;
+  text-align: left;
+  padding: 15px 10px;
+  margin-top: auto; /* stick footer at bottom */
+}
+
+/* Toast container */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 14px 20px;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  z-index: 9999;
+  min-width: 250px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+  animation: slideIn 0.3s ease, fadeOut 0.5s ease 2.5s forwards;
+}
+
+/* Success toast */
+.toast.success {
+  background-color: #a78c28; /* green */
+}
+
+/* Error toast */
+.toast.error {
+  background-color: #dc3545; /* red */
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(100%); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* Fade-out animation */
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

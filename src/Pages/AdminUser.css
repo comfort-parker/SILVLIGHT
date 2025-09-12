@@ -1,0 +1,114 @@
+.admin-users-container {
+  padding: 20px;
+}
+
+.admin-users-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.admin-users-search {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.admin-users-loading {
+  font-size: 16px;
+  color: #555;
+}
+
+.admin-users-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.admin-users-table th{
+  background: #f5f5f5;
+  text-align: left;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 10px;
+  color: #555;
+}
+
+/* .admin-users-table th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+} */
+
+.admin-users-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  background: white;
+}
+
+
+.admin-users-role-select {
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.admin-users-delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.admin-users-delete-btn:hover {
+  background-color: #c0392b;
+}
+
+.admin-users-no-data {
+  text-align: center;
+  padding: 20px;
+  color: #777;
+}
+.admin-users-error {
+  color: red;
+  margin-top: 10px;
+}
+.admin-users-success {
+  color: green;
+  margin-top: 10px;
+}
+.admin-users-actions {
+  display: flex;
+  gap: 10px;
+}
+.admin-users-actions button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.admin-users-actions .save-btn {
+  background-color: #28a745;
+  color: white;
+}
+.admin-users-actions .save-btn:hover {
+  background-color: #218838;
+}
+.admin-users-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.admin-users-filters input {
+  border: 1px solid #ccc;
+  padding: 8px 12px;
+  border-radius: 2px;
+  flex: 1;
+  min-width: 180px;
+}

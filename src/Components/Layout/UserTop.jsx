@@ -1,6 +1,6 @@
 // src/Components/Layout/UserTop.jsx
 import React, { useState, useEffect } from "react";
-import { FaBell, FaUserCircle, FaShoppingCart } from "react-icons/fa";
+import { FaUserCircle, FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../Cart/CartContext";
 import logo from "../../assets/log.png";
@@ -8,6 +8,7 @@ import "./UserTop.css";
 
 const UserTopbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false); // 🔹 state for hamburger menu
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
   const { cart } = useCart();
@@ -43,21 +44,24 @@ const UserTopbar = () => {
         <h2 className="app-name">SILVLIGHT SHOP</h2>
       </div>
 
-      {/* Middle Section (Menus) */}
-      <div className="topbar-middle">
-        <Link to="/landing" className="nav-link">Home</Link>
-        <Link to="/dashboard/orders" className="nav-link">Orders</Link>
-        <Link to="/blog" className="nav-link">Blog</Link>
-        <Link to="/about" className="nav-link">About</Link>
+      {/* Middle Section (Desktop Nav) */}
+      <div className={`topbar-middle ${menuOpen ? "open" : ""}`}>
+        <Link to="/landing" className="nav-link" onClick={() => setMenuOpen(false)}>Home</Link>
+        <Link to="/dashboard/orders" className="nav-link" onClick={() => setMenuOpen(false)}>Orders</Link>
+        <Link to="/blog" className="nav-link" onClick={() => setMenuOpen(false)}>Blog</Link>
+        <Link to="/about" className="nav-link" onClick={() => setMenuOpen(false)}>About</Link>
       </div>
 
       {/* Right Section */}
       <div className="topbar-right">
-        {/* Notifications */}
-        <div className="notifications">
-          <FaBell />
-          <span className="badge">2</span>
-        </div>
+        {/* Hamburger for Mobile */}
+        <button
+          className="menu-toggle"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
 
         {/* Cart Icon */}
         <div className="cart-icon" onClick={() => navigate("/cart")}>

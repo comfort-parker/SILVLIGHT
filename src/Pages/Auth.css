@@ -1,3 +1,4 @@
+/* ========= HERO SECTION ========= */
 .log-hero {
   position: relative;
   width: 100%;
@@ -7,7 +8,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
 }
 
 .log-hero .overlay {
@@ -36,52 +36,59 @@
 .log-hero .hero-text p {
   font-size: 1.2rem;
 }
-/* Main wrapper with spacing */
+
+/* ========= AUTH LAYOUT ========= */
 .auth-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;   /* ✅ ensures at least full viewport */
-  padding: 10px;
+  height: 80vh;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-/* Left side image */
+.auth-box {
+  display: flex;
+  width: 100%;
+  max-width: 1400px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Left image */
 .auth-image {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  background: #f0f4f8;
   padding: 20px;
 }
 
 .auth-image img {
   max-width: 100%;
-  max-height: 700px;
   height: auto;
   object-fit: cover;
 }
 
-/* Right side form */
+/* Right form */
 .auth-form-container {
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white;
-  border-radius: 12px;
   padding: 40px;
-  
+  background: #fff;
 }
 
-/* Form styles */
 .auth-form {
   width: 100%;
-  max-width: 650px;
+  max-width: 500px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 14px;
 }
 
 .auth-form h2 {
@@ -93,12 +100,11 @@
 .auth-form input[type="text"],
 .auth-form input[type="email"],
 .auth-form input[type="password"] {
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 15px;
 }
-
 
 .checkbox-label {
   font-size: 14px;
@@ -115,7 +121,7 @@
   font-size: 16px;
   font-weight: bold;
   border: none;
-  /* border-radius: 6px; */
+  border-radius: 6px;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -146,56 +152,7 @@
   text-decoration: underline;
 }
 
-/* 📱 Responsive: stack on smaller screens */
-@media (max-width: 768px) {
-  .auth-wrapper {
-    flex-direction: column;
-    padding: 20px;
-  }
-  .auth-image {
-    max-height: 250px;
-  }
-}
-
-
-.auth-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 80vh;
-  padding: 10px;
-}
-
-.auth-box {
-  display: flex;
-  width: 1800px;        
-  overflow: hidden;
-}
-
-.auth-image {
-  flex: 0.5;            
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #f0f4f8;
-  padding: 20px;
-}
-
-.auth-image img {
-  max-width: 100%;
-  height: auto;
-}
-
-.auth-form-container {
-  flex: 0.6;           
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-}
-
-
-/* Make footer stick at bottom */
+/* ========= FOOTER ========= */
 .page-container {
   display: flex;
   flex-direction: column;
@@ -203,7 +160,7 @@
 }
 
 .content-wrap {
-  flex: 1; /* pushes footer to bottom */
+  flex: 1; /* pushes footer down */
 }
 
 footer {
@@ -211,10 +168,10 @@ footer {
   color: #fff;
   text-align: left;
   padding: 15px 10px;
-  margin-top: auto; /* stick footer at bottom */
+  margin-top: auto;
 }
 
-/* Toast container */
+/* ========= TOAST ========= */
 .toast {
   position: fixed;
   top: 20px;
@@ -229,24 +186,58 @@ footer {
   animation: slideIn 0.3s ease, fadeOut 0.5s ease 2.5s forwards;
 }
 
-/* Success toast */
 .toast.success {
-  background-color: #a78c28; /* green */
+  background-color: #a78c28;
 }
 
-/* Error toast */
 .toast.error {
-  background-color: #dc3545; /* red */
+  background-color: #dc3545;
 }
 
-/* Slide-in animation */
 @keyframes slideIn {
   from { opacity: 0; transform: translateX(100%); }
   to { opacity: 1; transform: translateX(0); }
 }
 
-/* Fade-out animation */
 @keyframes fadeOut {
   from { opacity: 1; }
   to { opacity: 0; }
+}
+
+/* ========= RESPONSIVE ========= */
+@media (max-width: 992px) {
+  .auth-box {
+    flex-direction: column;
+    max-width: 90%;
+  }
+
+  .auth-image {
+    max-height: 250px;
+  }
+
+  .auth-form-container {
+    padding: 20px;
+  }
+
+  .log-hero .hero-text h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .auth-form {
+    max-width: 100%;
+  }
+
+  .log-hero {
+    height: 35vh;
+  }
+
+  .log-hero .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .log-hero .hero-text p {
+    font-size: 1rem;
+  }
 }

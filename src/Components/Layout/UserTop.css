@@ -11,7 +11,14 @@
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   z-index: 1000;          
 }
-
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 22px;
+  color: #fff;
+  cursor: pointer;
+}
 
 .topbar-left {
   display: flex;
@@ -111,3 +118,94 @@
 .logout-btn:hover {
   color: #ffdd00;
 }
+
+/* 🔹 Responsive tweaks */
+@media (max-width: 992px) {
+  .topbar-middle {
+    gap: 15px;
+  }
+  .nav-link {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar-middle {
+    position: absolute;
+    top: 60px; /* below topbar */
+    left: 0;
+    width: 100%;
+    background: #f3a305;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px 20px;
+    display: none; /* hidden by default */
+  }
+
+  .topbar-middle.open {
+    display: flex; /* show when menuOpen is true */
+  }
+
+  .nav-link {
+    display: block;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .menu-toggle {
+    display: block; /* show hamburger on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 30px;
+    margin-right: 5px;
+  }
+
+  .app-name {
+    display: none; /* hide app name to save space */
+  }
+
+  .topbar {
+    padding: 8px 12px;
+  }
+
+  .topbar-right {
+    gap: 12px;
+  }
+
+  .notifications,
+  .cart-icon,
+  .profile-container {
+    font-size: 12px;
+  }
+
+  .dropdown-menu {
+    top: 35px;
+    right: 5px;
+    font-size: 10px;
+    padding: 8px;
+    width: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Reduce app name font size */
+  .app-name {
+    font-size: 14px;
+  }
+
+  /* Reduce username font size */
+  .user-name {
+    font-size: 12px;
+  }
+
+  /* Optional: reduce spacing between profile items */
+  .profile-container {
+    gap: 4px;
+  }
+}
+

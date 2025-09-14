@@ -13,16 +13,18 @@
   gap: 2rem;
   padding: 2rem;
   flex: 1;
-  width: 1500px;
+  width: 100%;
+  max-width: 1500px; /* instead of fixed */
   margin: 0 auto;
 }
 
 /* ======= Cart Items Section ======= */
 .cart-items-section {
-  flex: 0 0 65%;  /* items take ~65% width */
+  flex: 1;  /* grow/shrink as needed */
   background: #fff;
   padding: 20px;
   border-radius: 8px;
+  min-width: 0; /* prevents overflow in flexbox */
 }
 
 .cart-items-section h2 {
@@ -33,7 +35,7 @@
 /* ======= Each Cart Item ======= */
 .cart-item {
   display: flex;
-  justify-content: space-between; /* split left/middle/right */
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
   background-color: #fff;
@@ -41,17 +43,16 @@
   border-radius: 10px;
   margin-bottom: 1rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex-wrap: wrap; /* wrap on small screens */
 }
 
-/* Left - product image */
 .cart-item-image {
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 8px;
 }
 
-/* Middle - name & quantity */
 .cart-item-details {
   flex: 1;
   display: flex;
@@ -65,17 +66,11 @@
   color: #222;
 }
 
-/* Right - price & remove */
 .cart-item-actions {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   gap: 0.5rem;
-}
-
-.item-price {
-  font-weight: bold;
-  color: #333;
 }
 
 /* ======= Quantity Controls ======= */
@@ -104,7 +99,7 @@
   text-align: center;
 }
 
-/* ======= Remove Button ======= */
+/* ======= Buttons ======= */
 .remove-btn {
   padding: 0.4rem 0.8rem;
   background-color: #ff4d4d;
@@ -120,7 +115,6 @@
   background-color: #cc0000;
 }
 
-/* ======= Clear Cart Button ======= */
 .clear-btn {
   margin-top: 1rem;
   padding: 0.7rem 1.2rem;
@@ -138,7 +132,7 @@
 
 /* ======= Cart Summary Card ======= */
 .cart-summary {
-  flex: 0 0 35%;  /* summary takes ~35% width */
+  flex: 0 0 35%;
   background-color: #fff;
   border-radius: 10px;
   padding: 1.5rem;
@@ -196,6 +190,13 @@ footer {
 }
 
 /* ======= Responsive ======= */
+@media (max-width: 1200px) {
+  .cart-content {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
 @media (max-width: 900px) {
   .cart-content {
     flex-direction: column;
@@ -206,5 +207,29 @@ footer {
     margin-top: 2rem;
     position: relative;
     top: 0;
+    flex: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .cart-item-actions {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .quantity-controls {
+    margin-top: 0.5rem;
   }
 }

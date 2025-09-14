@@ -150,9 +150,14 @@
 }
 
 /* ================= RESPONSIVE ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
   .hero-text h1 {
     font-size: 2.2rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
   }
 
   .about-mvv {
@@ -169,3 +174,74 @@
     font-size: 1.8rem;
   }
 }
+
+/* Extra Small Screens (Mobile Phones < 480px) */
+@media (max-width: 480px) {
+  /* General spacing */
+  .about-container {
+    padding: 0 1rem;
+  }
+
+  /* Hero section */
+  .contact-hero {
+    height: 45vh; /* give a bit more height for text */
+    padding: 0 1rem;
+  }
+
+  .hero-text h1 {
+    font-size: 1.8rem;
+    line-height: 1.2;
+  }
+
+  .hero-text p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text .btn {
+    font-size: 0.9rem;
+    padding: 0.6rem 1rem;
+  }
+
+  /* Head message */
+  .head-message {
+    font-size: 1rem;
+    padding: 0 0.5rem;
+  }
+
+  /* MVV Cards */
+  .about-mvv {
+    gap: 1rem;
+    padding: 2rem 1rem;
+  }
+
+  .mvv-card {
+    padding: 1.5rem;
+  }
+
+  .mvv-card h3 {
+    font-size: 1.3rem;
+  }
+
+  .mvv-card p {
+    font-size: 0.95rem;
+  }
+
+  /* Principal Section */
+  .principal-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .principal-message h2 {
+    font-size: 1.5rem;
+  }
+
+  .principal-message p {
+    font-size: 0.95rem;
+  }
+
+  .principal-image img {
+    max-width: 90%;
+  }
+}
+

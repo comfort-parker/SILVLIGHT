@@ -4,6 +4,7 @@
   text-align: center;
 }
 
+/* ===== Header ===== */
 .header {
   display: flex;
   justify-content: space-between;
@@ -11,6 +12,7 @@
   padding: 1rem 2rem;
   background: #e4b713;
   color: #fff;
+  flex-wrap: wrap; /* allow wrapping on small screens */
 }
 
 .logo {
@@ -21,6 +23,7 @@
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -29,6 +32,7 @@
   font-weight: bold;
 }
 
+/* ===== Hero Section ===== */
 .hero {
   padding: 4rem 2rem;
   background: #f5f9ff;
@@ -58,6 +62,7 @@
   background: #084a9b;
 }
 
+/* ===== Features Section ===== */
 .features {
   padding: 3rem 2rem;
   background: #fff;
@@ -75,12 +80,86 @@
   padding: 1.5rem;
   border-radius: 8px;
   width: 250px;
+  max-width: 100%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
+/* ===== Footer ===== */
 .footer {
   background: #0a74da;
   color: #fff;
   padding: 1rem;
   margin-top: 3rem;
 }
+
+/* ===== Responsive Breakpoints ===== */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .feature-cards {
+    gap: 1rem;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .hero {
+    padding: 2rem 1rem;
+  }
+
+  .hero h2 {
+    font-size: 1.75rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .feature-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+@media (max-width: 768px) {
+  .content-admin-container {
+    padding: 1.5rem;
+  }
+
+  .content-admin-container h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+  .content-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+  }}

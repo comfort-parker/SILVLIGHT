@@ -1,3 +1,5 @@
+/* ========= AdminUsers.css ========= */
+
 .admin-users-container {
   padding: 20px;
 }
@@ -28,7 +30,7 @@
   font-size: 14px;
 }
 
-.admin-users-table th{
+.admin-users-table th {
   background: #f5f5f5;
   text-align: left;
   font-size: 14px;
@@ -37,17 +39,11 @@
   color: #555;
 }
 
-/* .admin-users-table th {
-  background-color: #f4f4f4;
-  font-weight: bold;
-} */
-
 .admin-users-table td {
   padding: 10px;
   border-bottom: 1px solid #eee;
   background: white;
 }
-
 
 .admin-users-role-select {
   padding: 4px 6px;
@@ -73,31 +69,38 @@
   padding: 20px;
   color: #777;
 }
+
 .admin-users-error {
   color: red;
   margin-top: 10px;
 }
+
 .admin-users-success {
   color: green;
   margin-top: 10px;
 }
+
 .admin-users-actions {
   display: flex;
   gap: 10px;
 }
+
 .admin-users-actions button {
   padding: 6px 12px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
+
 .admin-users-actions .save-btn {
   background-color: #28a745;
   color: white;
 }
+
 .admin-users-actions .save-btn:hover {
   background-color: #218838;
 }
+
 .admin-users-filters {
   display: flex;
   gap: 12px;
@@ -111,4 +114,70 @@
   border-radius: 2px;
   flex: 1;
   min-width: 180px;
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .admin-users-title {
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .admin-users-filters {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .admin-users-search {
+    max-width: 100%;
+  }
+
+  .admin-users-table {
+    font-size: 13px;
+  }
+
+  .admin-users-table th,
+  .admin-users-table td {
+    padding: 8px;
+  }
+
+  .admin-users-actions {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .admin-users-actions button {
+    flex: 1;
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .admin-users-container {
+    padding: 12px;
+  }
+
+  .admin-users-title {
+    font-size: 18px;
+  }
+
+  .admin-users-filters input {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .admin-users-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .admin-users-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .admin-users-actions button {
+    width: 100%;
+  }
 }

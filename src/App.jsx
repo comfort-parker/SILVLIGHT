@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-dom";
 import { CartProvider } from "./Components/Cart/CartContext"; // ✅ import CartProvider
 import LandingPage from "./Pages/Landing";
 import Signup from "./Pages/Signup";
@@ -30,6 +30,9 @@ const App = () => {
     <CartProvider>
       <Router>
         <Routes>
+          {/* Root route */}
+          <Route path="/" element={<Navigate to="/landing" />} />
+
           {/* Public pages */}
           <Route path="/landing" element={<LandingPage />} />
           <Route path="/signup" element={<Signup />} />
@@ -45,14 +48,15 @@ const App = () => {
           <Route path="/contactus" element={<Contactus />} />
           <Route path="/aboutus" element={<AboutUs />} />
 
+          {/* Protected pages */}
           <Route 
-  path="/cart" 
-  element={
-    <ProtectedRoute>
-      <CartPage />
-    </ProtectedRoute>
-  } 
-/>
+            path="/cart" 
+            element={
+              <ProtectedRoute>
+                <CartPage />
+              </ProtectedRoute>
+            } 
+          />
           <Route path="/dashboard" element={<UserDashboard />} />
 
           {/* Admin dashboard */}
@@ -61,7 +65,7 @@ const App = () => {
             <Route path="products" element={<ProductList />} />
             <Route path="products/new" element={<ProductForm />} />
             <Route path="products/edit/:id" element={<ProductForm />} />
-            <Route path="users" element={<AdminUsers/>} />
+            <Route path="users" element={<AdminUsers />} />
             <Route path="orders" element={<AdminOrdersPage />} />
             <Route path="analytics" element={<h2>Analytics Page (Coming Soon)</h2>} />
             <Route path="content" element={<AdminContentPage />} />

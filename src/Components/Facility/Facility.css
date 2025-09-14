@@ -1,0 +1,109 @@
+.facilities-section {
+  padding: 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.facilities-grid {
+  display: flex;              /* Use flex instead of grid */
+  flex-wrap: wrap;            /* Allow wrapping to the next line */
+  justify-content: center;    /* Center items horizontally */
+  gap: 20px;                  /* Space between cards */
+}
+
+.facility-card {
+  width: 320px;               /* Make images bigger */
+  height: 250px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.facility-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.facility-front,
+.facility-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.facility-front img,
+.facility-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.facility-front h3,
+.facility-back h3 {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  color: #fff;
+  font-size: 1.2rem;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 5px;
+}
+
+.facility-back {
+  transform: rotateY(180deg);
+}
+
+.facility-card:hover .facility-inner {
+  transform: rotateY(180deg);
+}
+
+/* Video modal */
+.video-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.video-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 800px;
+  width: 90%;
+}
+
+.video-content video {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 50%;
+  font-size: 18px;
+}

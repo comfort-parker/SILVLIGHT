@@ -23,6 +23,7 @@ import AdminUsers from "./Pages/AdminUser";
 import AdminContentPage from "./Pages/AdminLetter";
 import Blog from "./Pages/Blog";
 import Contactus from "./Pages/ContactUs";
+import AboutUs from "./Pages/AboutUs";
 
 const App = () => {
   return (
@@ -42,6 +43,8 @@ const App = () => {
           <Route path="/order-confirmation/:orderId" element={<OrderConfirmation />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/contactus" element={<Contactus />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+
           <Route 
   path="/cart" 
   element={

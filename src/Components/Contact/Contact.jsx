@@ -2,9 +2,9 @@ import React from 'react'
 import './Contact.css'
 import chat from '../../Assets/chat.png'
 import telephone from '../../Assets/telephone.png'
-import loc from '../../Assets/loc.png'
-import letter from '../../Assets/letter.png'
-import right from '../../Assets/right.png'
+import loc from '../../assets/loc.png'
+import letter from '../../assets/letter.png'
+import right from '../../assets/right.png'
 
 const Contact = () => {
   const [result, setResult] = React.useState("");

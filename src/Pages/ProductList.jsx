@@ -1,4 +1,3 @@
-// src/Pages/ProductList.jsx
 import React, { useEffect, useState } from "react";
 import { getProducts, deleteProduct, updateProduct } from "../Api";
 import { Link } from "react-router-dom";

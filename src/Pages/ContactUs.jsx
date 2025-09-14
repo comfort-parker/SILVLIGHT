@@ -3,7 +3,7 @@ import './ContactUs.css'
 import Navbar from '../Components/Navbar/Navbar'
 import Footer from '../Components/Footer/Footer'
 import Contact from '../Components/Contact/Contact'
-import campus from '../Assets/groceries.gif'
+import campus from '../assets/groceries.gif'
 
 
 

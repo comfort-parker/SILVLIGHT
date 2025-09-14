@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./Facility.css";
-import camp from "../../Assets/camp.jpg";
-import campu from "../../Assets/campu.jpg";
-import vid from "../../Assets/vid.mp4";
+import camp from "../../assets/camp.jpg";
+import campu from "../../assets/campu.jpg";
+import vid from "../../assets/vid.mp4";
 
 const facilities = [
   {

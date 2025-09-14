@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import "./Resetpass.css";
-import cam from "../Assets/groceries.gif";
+import cam from "../assets/groceries.gif";
 import Navbar from "../Components/Navbar/Navbar";
 import Footer from "../Components/Footer/Footer";
 import { forgotPassword } from "../Api";

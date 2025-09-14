@@ -7,8 +7,8 @@ import Title from "../Components/Title/Title";
 import Footer from "../Components/Footer/Footer";
 import Navbar from "../Components/Navbar/Navbar";
 import About from "../Components/About/About";
-import campu from "../Assets/groceries.gif";
-import as from '../Assets/ass.jpeg';
+import campu from "../assets/groceries.gif";
+import as from '../assets/ass.jpeg';
 import Video from "../Components/Video/Video";
 
 const AboutUs = () => {

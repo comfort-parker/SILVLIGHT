@@ -1,10 +1,10 @@
 import React, { useRef } from 'react'
 import './Testmonial.css'
-import next from '../../Assets/next.png'
-import back from '../../Assets/back.png'
-import as from '../../Assets/as.jpeg'
-import ass from '../../Assets/ass.jpeg'
-import assett from '../../Assets/assett.jpeg'
+import next from '../../assets/next.png'
+import back from '../../assets/back.png'
+import as from '../../assets/as.jpeg'
+import ass from '../../assets/ass.jpeg'
+import assett from '../../assets/assett.jpeg'
 import sg from '../../assets/sg.jpg'
 
 const Testmonial = () => {

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios"; 
-import cam from "../Assets/groceries.gif";
+import cam from "../assets/groceries.gif";
 import "./Forgotpass.css";
 
 // Import your common layout components

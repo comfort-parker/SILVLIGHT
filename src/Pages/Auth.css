@@ -8,6 +8,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 10px; /* space from top bar */
 }
 
 .log-hero .overlay {
@@ -55,6 +56,7 @@
   background: #fff;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex-direction: row;
 }
 
 /* Left image */
@@ -205,6 +207,8 @@ footer {
 }
 
 /* ========= RESPONSIVE ========= */
+
+/* Medium screens */
 @media (max-width: 992px) {
   .auth-box {
     flex-direction: column;
@@ -213,17 +217,28 @@ footer {
 
   .auth-image {
     max-height: 250px;
+    padding: 10px;
   }
 
   .auth-form-container {
     padding: 20px;
   }
 
+  .log-hero {
+    height: 40vh;
+    margin-top: 10px;
+  }
+
   .log-hero .hero-text h1 {
     font-size: 2.2rem;
   }
+
+  .log-hero .hero-text p {
+    font-size: 1rem;
+  }
 }
 
+/* Small screens / mobile */
 @media (max-width: 576px) {
   .auth-form {
     max-width: 100%;
@@ -231,13 +246,42 @@ footer {
 
   .log-hero {
     height: 35vh;
+    margin-top: 5px;
   }
 
   .log-hero .hero-text h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 1.2;
   }
 
   .log-hero .hero-text p {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .auth-image {
+    max-height: 180px;
+  }
+
+  .auth-form-container {
+    padding: 15px;
+  }
+}
+
+/* Extra small / portrait phones */
+@media (max-width: 400px) {
+  .log-hero {
+    height: 30vh;
+  }
+
+  .log-hero .hero-text h1 {
+    font-size: 1.4rem;
+  }
+
+  .log-hero .hero-text p {
+    font-size: 0.85rem;
+  }
+
+  .auth-image {
+    max-height: 150px;
   }
 }

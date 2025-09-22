@@ -1,30 +1,38 @@
 /** Category.css **/
 .category-section {
-    height: 50vh;
-  margin: 50px auto;
+  height: auto; /* let content expand naturally */
+  margin: 30px auto;
   width: 100%;
   max-width: 1700px;
+  padding: 0 10px;
 }
 
 .section-title {
   font-size: 24px;
   margin-bottom: 20px;
   color: #e78c04;
-    text-align: center;
+  text-align: center;
 }
 
+/* Slider */
 .category-slider {
   display: flex;
-  height: auto; /* allow natural height */
   gap: 20px;
   overflow-x: auto;
   scroll-behavior: smooth;
   padding-bottom: 10px;
+  -ms-overflow-style: none;  /* hide scrollbar IE/Edge */
+  scrollbar-width: none;     /* hide scrollbar Firefox */
 }
 
+.category-slider::-webkit-scrollbar {
+  display: none; /* hide scrollbar Chrome/Safari */
+}
+
+/* Cards */
 .category-card {
-  width: 280px;        /* fixed width for uniform cards */
-  height: 380px;       /* fixed height so all are equal */
+  width: 280px;                /* fixed width for uniform cards */
+  min-height: 380px;           /* minimum height but flexible */
   flex: 0 0 auto;
   background: #fff;
   border-radius: 12px;
@@ -34,14 +42,13 @@
   cursor: pointer;
   transition: transform 0.3s;
   display: flex;
-  flex-direction: column;  /* stack content inside */
-  justify-content: space-between; /* distribute evenly */
+  flex-direction: column;       /* stack content inside */
 }
 
 .category-card img {
   width: 100%;
-  height: 180px;      /* fixed uniform image height */
-  object-fit: cover;  /* keeps aspect ratio but crops if needed */
+  height: 180px;                /* uniform image */
+  object-fit: cover;
   border-radius: 10px;
   margin-bottom: 10px;
 }
@@ -51,10 +58,11 @@
   text-align: left;
   margin-left: 10px;
   margin-top: 8px;
+  flex-shrink: 0;               /* prevent text from squishing */
 }
 
 .explore-btn {
-  margin-top: auto;   /* pushes button to bottom */
+  margin-top: auto;             /* stays at bottom inside card */
   width: 90%;
   padding: 10px 15px;
   background: transparent;
@@ -71,16 +79,63 @@
   background: #e78c04;
   color: #fff;
 }
-.category-slider {
-  display: flex;
-  gap: 20px;
-  overflow-x: scroll;   /* allow scroll for JS */
-  scroll-behavior: smooth;
-  padding-bottom: 10px;
-  -ms-overflow-style: none;  /* hide scrollbar IE/Edge */
-  scrollbar-width: none;     /* hide scrollbar Firefox */
+
+/* ✅ Responsive tweaks */
+@media (max-width: 768px) {
+  .category-card {
+    width: 220px;
+    min-height: auto;          /* adapt on small screens */
+  }
+
+  .category-card img {
+    height: 150px;
+  }
+
+  .category-card h3 {
+    font-size: 16px;
+  }
+
+  .category-card p {
+    font-size: 14px;
+  }
+
+  .explore-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
 }
 
-.category-slider::-webkit-scrollbar {
-  display: none; /* hide scrollbar Chrome/Safari */
+@media (max-width: 480px) {
+  .category-card {
+    width: 180px;
+  }
+
+  .category-card img {
+    height: 120px;
+  }
+
+  .category-card h3 {
+    font-size: 14px;
+  }
+
+  .category-card p {
+    font-size: 12px;
+  }
+
+  .explore-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
 }
+
+/* Large screens (desktops) */
+@media (max-width: 1200px) {
+  .category-card {
+    width: 240px;
+    height: 350px;
+  }
+  .section-title {
+    font-size: 22px;
+  }
+}
+

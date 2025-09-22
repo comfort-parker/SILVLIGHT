@@ -1,144 +1,170 @@
-nav {
-  width: 100%;
-  background: transparent;
-  color: white;
+/* ===== Navbar base ===== */
+.navbar {
   position: fixed;
   top: 0;
+  left: 0;
+  width: 100%;
+  padding: 12px 6%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 4px 0;
-  top: 0;
-  left: 0;
-  z-index: 10;
+  gap: 12px;
+  z-index: 1200;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+  background: transparent;
 }
 
-.logo{
-  width: 50px;
+/* dark / sticky state */
+.navbar.dark-nav {
+  background: rgba(202, 131, 23, 0.9);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+  color: #fff;
 }
 
-nav ul li {
+/* solid state */
+.navbar.solid-nav {
+  background: #fff;
+  color: #111;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.08);
+}
+
+/* brand/logo */
+.brand { display:flex; align-items:center; text-decoration:none; }
+.logo { height: 40px; width: auto; display:block; }
+
+/* ========== Nav links (desktop) ========== */
+.nav-links {
+  display: flex;
+  gap: 20px;
   list-style: none;
-  display: inline-block;
-  margin: 5px 20px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+
+  /* center the nav-list horizontally on wide screens */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* link style */
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 600;
   font-size: 15px;
-}
-.dark-nav{
-  background: rgba(206, 145, 15, 0.6);
-  transition: 0.5s;
+  padding: 6px 8px;
+  transition: color 0.18s ease, background 0.18s ease;
 }
 
-.btn {
-  display: inline-flex; 
-  align-items: center; 
-  justify-content: center; 
-  padding: 10px 20px;
-  border: 0.5px solid #f5f4f2;
-  background-color: #e78c04;
-  color: whitesmoke; 
-  cursor: pointer;
-  border-radius: 50px;
-  
- 
+/* CTA buttons */
+.nav-links li .cta {
+  background: #e08c0d;
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 700;
 }
-.menu-icon {
-  display: none;
-  font-size: 40px;
-  cursor: pointer;
+.nav-links li .cta:hover {
+  background: #c67a07;
 }
 
-.solid-nav {
-  background: standard rgb(224, 161, 12); /* white background */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  color: black;
+/* nav actions on the right */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
 }
 
-@media (max-width: 1000px){
-  .logo{
-    width:  140px;
-  }
-  nav ul li{
-    margin: 10px 15px;
-    
-  }
-}
-@media (max-width: 1000px){
-  nav{
-    padding: 15px 0;
-  }
-  nav ul{
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(239, 173, 31, 0.6);
-
-    width: 200px;
-    z-index: -1;
-    padding-top: 70px;
-    transition: 0.5s;
-  }
-  nav ul li{
-    display: block;
-    margin: 25px 40px;
-  
-  }
-  .menu-icon {
-    display: block;
-    color: white;
-    width: 40px;
-    cursor: pointer;
-  }
-}
-.hide-menu {
-  right: -250px;
-}
-
-
+/* cart icon */
 .cart-icon {
-  position: relative;
-  font-size: 25px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
   cursor: pointer;
-  margin: 0 45px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
 }
+.cart-icon svg { display:block; }
 
 .cart-count {
   position: absolute;
-  top: -8px;
+  top: -7px;
   right: -10px;
   background: red;
   color: white;
-  font-size: 12px;
+  font-size: 11px;
   padding: 2px 6px;
   border-radius: 50%;
+  font-weight: 700;
 }
 
-
-
-.cart-icon:hover {
-  color: #e78c04;
+/* menu toggle */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
 }
 
-.dark-nav .cart-icon {
-  color: white;
+/* ===== Mobile behavior ===== */
+@media (max-width: 900px) {
+
+  .nav-links {
+    position: fixed;
+    top: 64px; /* below nav */
+    right: 0;
+    left: auto;               /* ✅ remove desktop centering */
+    transform: translateX(100%); /* ✅ fully off-screen */
+    height: auto;
+    max-height: 70vh;
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 12px;
+    background: #c67a07;      /* ✅ your requested background */
+    box-shadow: -6px 0 20px rgba(0,0,0,0.25);
+    transition: transform 280ms cubic-bezier(.2,.9,.3,1);
+    overflow-y: auto;
+    border-radius: 0 0 0 12px;
+    z-index: 1150;
+  }
+
+  .nav-links.open {
+    transform: translateX(0); /* ✅ slide in */
+  }
+
+  .nav-links li a {
+    color: #fff;
+    padding: 10px 8px;
+    width: 100%;
+    display: block;
+  }
+
+  .nav-links li .cta {
+    width: 100%;
+    text-align: center;
+    background: #fff;
+    color: #c67a07;           /* ✅ contrast button */
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    color: #fff;
+  }
+
+  .cart-icon { color: #fff; }
 }
 
-.solid-nav .cart-icon {
-  color: black;
-}
-
-.user-info {
-  display: flex;
-  align-items: center;
-  margin-left: 15px;
-  color: #fff;
-  font-weight: 500;
-}
-
-.profile-icon {
-  font-size: 22px;
-  margin-right: 6px;
-}
-
-
-
+/* If navbar is solid (white), ensure links are dark on desktop */
+.navbar.solid-nav .nav-links li a { color: #111; }
+.navbar.solid-nav .cart-icon,
+.navbar.solid-nav .menu-toggle { color: #111; }

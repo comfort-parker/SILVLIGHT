@@ -1,26 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { FaBell, FaUserCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom"; // ✅ useNavigate
 import logo from "../../assets/log.png";
 import "./Topbar.css";
 
 const Topbar = ({ toggleSidebar }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [userName, setUserName] = useState("");
+  const navigate = useNavigate(); // ✅ for programmatic navigation
 
   useEffect(() => {
-  const admin = JSON.parse(localStorage.getItem("admin"));
-  const user = JSON.parse(localStorage.getItem("user"));
+    const admin = JSON.parse(localStorage.getItem("admin"));
+    const user = JSON.parse(localStorage.getItem("user"));
 
-  if (admin && admin.firstName && admin.lastName) {
-    setUserName(`${admin.firstName} ${admin.lastName}`);
-  } else if (user && user.firstName && user.lastName) {
-    setUserName(`${user.firstName} ${user.lastName}`);
-  } else {
-    setUserName(""); 
-  }
-}, []);
+    if (admin && admin.firstName && admin.lastName) {
+      setUserName(`${admin.firstName} ${admin.lastName}`);
+    } else if (user && user.firstName && user.lastName) {
+      setUserName(`${user.firstName} ${user.lastName}`);
+    } else {
+      setUserName("");
+    }
+  }, []);
 
+  // ✅ Logout function
+  const handleLogout = () => {
+    localStorage.removeItem("admin");
+    localStorage.removeItem("user");
+    localStorage.removeItem("role");
+    localStorage.clear(); // clear everything (optional)
+
+    navigate("/landing"); // redirect to landing page
+  };
 
   return (
     <div className="topbar">
@@ -50,17 +60,32 @@ const Topbar = ({ toggleSidebar }) => {
           {dropdownOpen && (
             <ul className="dropdown-menu">
               <li>
-                <Link to={localStorage.getItem("role") === "admin" ? "/admin/profile" : "/dashboard/profile"}>
+                <Link
+                  to={
+                    localStorage.getItem("role") === "admin"
+                      ? "/admin/profile"
+                      : "/dashboard/profile"
+                  }
+                >
                   Profile
                 </Link>
               </li>
               <li>
-                <Link to={localStorage.getItem("role") === "admin" ? "/admin/settings" : "/dashboard/settings"}>
+                <Link
+                  to={
+                    localStorage.getItem("role") === "admin"
+                      ? "/admin/settings"
+                      : "/dashboard/settings"
+                  }
+                >
                   Settings
                 </Link>
               </li>
               <li>
-                <Link to="/landing">Logout</Link>
+                {/* ✅ Call logout function */}
+                <button onClick={handleLogout} className="logout-btn">
+                  Logout
+                </button>
               </li>
             </ul>
           )}

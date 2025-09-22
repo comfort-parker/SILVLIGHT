@@ -19,6 +19,7 @@
   justify-content: center;
   gap: 15px;
   margin-bottom: 20px;
+  flex-wrap: wrap; /* ✅ allow wrapping on smaller screens */
 }
 
 .chart-filters label {
@@ -43,8 +44,77 @@
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
 
 .chart-filters button:hover {
   background-color: #45a049;
+}
+
+/* ===================== Responsive ===================== */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .chart-title {
+    font-size: 18px;
+  }
+
+  .chart-filters {
+    gap: 12px;
+  }
+
+  .chart-filters label {
+    font-size: 13px;
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .sales-chart-container {
+    padding: 15px;
+  }
+
+  .chart-title {
+    font-size: 16px;
+  }
+
+  .chart-filters {
+    flex-direction: column; /* ✅ stack filters vertically */
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .chart-filters label {
+    width: 100%;
+  }
+
+  .chart-filters input {
+    width: 100%; /* ✅ full width input */
+  }
+
+  .chart-filters button {
+    width: 100%; /* ✅ button full width */
+    align-self: center;
+    font-size: 14px;
+  }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .chart-title {
+    font-size: 15px;
+  }
+
+  .chart-filters {
+    gap: 8px;
+  }
+
+  .chart-filters input {
+    padding: 4px 6px;
+  }
+
+  .chart-filters button {
+    font-size: 13px;
+    padding: 5px 10px;
+  }
 }

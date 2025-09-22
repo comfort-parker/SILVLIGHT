@@ -174,3 +174,80 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   margin-top: 90px; /* space below categories */
 }
+
+/* ===================== Responsive ===================== */
+
+/* Tablet (≤1024px) */
+@media (max-width: 1024px) {
+  .summary-row {
+    grid-template-columns: 1fr;  /* stack cards vertically */
+  }
+
+  .sales-chart-card {
+    margin-top: 40px; /* reduce spacing */
+  }
+}
+
+/* Mobile (≤768px) */
+@media (max-width: 768px) {
+  .dashboard-welcome {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  .metrics-cards {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .metric-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .metric-icon {
+    margin: 0 0 10px;
+    font-size: 30px;
+  }
+
+  .product-header,
+  .product-row {
+    grid-template-columns: 1fr 1fr; /* reduce to 2 cols */
+    font-size: 0.8rem;
+  }
+
+  .category-header,
+  .category-row {
+    grid-template-columns: 1fr 1fr; /* reduce to 2 cols */
+    font-size: 0.8rem;
+  }
+
+  .product-value-badge,
+  .category-revenue-badge {
+    min-width: auto;
+    font-size: 0.7rem;
+    padding: 4px 6px;
+  }
+}
+
+/* Small Mobile (≤480px) */
+@media (max-width: 480px) {
+  .dashboard-container {
+    padding: 12px;
+  }
+
+  .dashboard-welcome {
+    font-size: 16px;
+  }
+
+  .metric-info p {
+    font-size: 18px;
+  }
+
+  .metric-card {
+    padding: 15px;
+  }
+
+  .sales-chart-card {
+    padding: 15px;
+  }
+}

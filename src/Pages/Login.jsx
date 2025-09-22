@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./Auth.css";
 import groceries from "../assets/groceries.gif";
@@ -7,17 +7,21 @@ import Footer from "../Components/Footer/Footer";
 import { loginUser } from "../Api";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useCart } from "../Components/Cart/CartContext";
 
 const Login = () => {
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const { fetchCart } = useCart(); // ✅ to update cart immediately after login
 
+  // Handle input change
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  // Handle login
   const handleLogin = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -36,12 +40,15 @@ const Login = () => {
 
       toast.success("Login successful!");
 
-      // ✅ Handle redirect if ?redirect= is present
+      // ✅ Immediately fetch the cart after login
+      await fetchCart();
+
+      // Handle redirect
       const params = new URLSearchParams(location.search);
       const redirect = params.get("redirect");
 
       if (redirect) {
-        navigate(redirect); // e.g., /products or /categories
+        navigate(redirect);
       } else if (data.user.role === "admin") {
         navigate("/admin");
       } else {
@@ -57,6 +64,8 @@ const Login = () => {
   return (
     <>
       <Navbar />
+
+      {/* Hero Section */}
       <div className="log-hero" style={{ backgroundImage: `url(${groceries})` }}>
         <div className="overlay"></div>
         <div className="hero-text">
@@ -65,10 +74,12 @@ const Login = () => {
         </div>
       </div>
 
+      {/* Form Section */}
       <div className="auth-Wrapper">
         <div className="auth-form-container">
           <form onSubmit={handleLogin} className="auth-form">
             <h2>Welcome Back</h2>
+
             <input
               name="email"
               type="email"
@@ -105,6 +116,7 @@ const Login = () => {
           </form>
         </div>
       </div>
+
       <Footer />
 
       {/* Toast container */}

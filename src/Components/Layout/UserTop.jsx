@@ -1,4 +1,3 @@
-// src/Components/Layout/UserTop.jsx
 import React, { useState, useEffect } from "react";
 import { FaUserCircle, FaShoppingCart, FaBars, FaTimes } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
@@ -8,33 +7,35 @@ import "./UserTop.css";
 
 const UserTopbar = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // 🔹 state for hamburger menu
+  const [menuOpen, setMenuOpen] = useState(false);
   const [userName, setUserName] = useState("");
   const navigate = useNavigate();
-  const { cart } = useCart();
+  const { cart, clearCart } = useCart(); // ✅ get clearCart from context
 
+  // Set userName from localStorage
   useEffect(() => {
     const user = JSON.parse(localStorage.getItem("user"));
-
-    if (user && user.firstName && user.lastName) {
+    if (user?.firstName && user?.lastName) {
       setUserName(`${user.firstName} ${user.lastName}`);
-    } else if (user && user.fullName) {
+    } else if (user?.fullName) {
       setUserName(user.fullName);
     } else {
       setUserName("");
     }
   }, []);
 
+  // Logout handler
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     localStorage.removeItem("role");
+
+    clearCart(); // ✅ clears cart state immediately
     navigate("/login");
   };
 
-  // total items in cart
-  const totalItems =
-    cart?.items?.reduce((sum, item) => sum + item.quantity, 0) || 0;
+  // Total items in cart
+  const totalItems = cart?.items?.reduce((sum, item) => sum + item.quantity, 0) || 0;
 
   return (
     <div className="topbar">
@@ -55,13 +56,9 @@ const UserTopbar = () => {
       {/* Right Section */}
       <div className="topbar-right">
         {/* Hamburger for Mobile */}
-        <button
-          className="menu-toggle"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
+        <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
-
 
         {/* Cart Icon */}
         <div className="cart-icon" onClick={() => navigate("/cart")}>
@@ -71,10 +68,7 @@ const UserTopbar = () => {
 
         {/* Profile Dropdown */}
         <div className="profile-dropdown">
-          <div
-            className="profile-container"
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-          >
+          <div className="profile-container" onClick={() => setDropdownOpen(!dropdownOpen)}>
             <FaUserCircle className="profile-icon" />
             <span className="user-name">{userName}</span>
           </div>

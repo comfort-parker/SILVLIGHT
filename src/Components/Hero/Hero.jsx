@@ -9,9 +9,9 @@ const Hero = () => {
     const token = localStorage.getItem("token");
     if (!token) {
       alert("Please login first to continue");
-      navigate("/login?redirect=/products");
+      navigate("/login?redirect=/dashboard"); // ✅ send redirect param
     } else {
-      navigate("/products");
+      navigate("/dashboard");
     }
   };
 
@@ -19,9 +19,9 @@ const Hero = () => {
     const token = localStorage.getItem("token");
     if (!token) {
       alert("Please login first to continue");
-      navigate("/login?redirect=/categories");
+      navigate("/login?redirect=/dashboard"); // ✅ send redirect param
     } else {
-      navigate("/categories");
+      navigate("/dashboard");
     }
   };
 

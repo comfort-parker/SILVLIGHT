@@ -15,6 +15,7 @@ const ProductsPage = ({ hideNavbar = false, dashboardMode = false }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [category, setCategory] = useState("");
   const [userName, setUserName] = useState("");
+  const [token, setToken] = useState(localStorage.getItem("token")); // ✅ keep token in state
 
   const categories = [
     "Cosmetics",
@@ -26,19 +27,33 @@ const ProductsPage = ({ hideNavbar = false, dashboardMode = false }) => {
   ];
 
   const { addToCart } = useCart();
-  const token = localStorage.getItem("token");
 
-  // ✅ fetch user name from localStorage
+  // ✅ keep token and user info synced with localStorage
   useEffect(() => {
-    const user = JSON.parse(localStorage.getItem("user"));
-    if (user?.firstName && user?.lastName) {
-      setUserName(`${user.firstName} ${user.lastName}`);
-    } else if (user?.fullName) {
-      setUserName(user.fullName);
-    }
+    const syncAuth = () => {
+      setToken(localStorage.getItem("token"));
+
+      const user = JSON.parse(localStorage.getItem("user"));
+      if (user?.firstName && user?.lastName) {
+        setUserName(`${user.firstName} ${user.lastName}`);
+      } else if (user?.fullName) {
+        setUserName(user.fullName);
+      } else {
+        setUserName("");
+      }
+    };
+
+    syncAuth();
+
+    // listen for changes (e.g., login/logout in other tabs)
+    window.addEventListener("storage", syncAuth);
+
+    return () => {
+      window.removeEventListener("storage", syncAuth);
+    };
   }, []);
 
-  // Fetch products
+  // ✅ fetch products
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -52,7 +67,7 @@ const ProductsPage = ({ hideNavbar = false, dashboardMode = false }) => {
     fetchProducts();
   }, []);
 
-  // Render product price
+  // ✅ render product price
   const renderPrice = (product) => {
     if (product.minPrice && product.maxPrice) {
       return product.minPrice === product.maxPrice
@@ -64,13 +79,14 @@ const ProductsPage = ({ hideNavbar = false, dashboardMode = false }) => {
       : "Price not available";
   };
 
-  // Add to cart
-  // Add to cart
-const handleAddToCart = async (product) => {
+  // ✅ add to cart
+  const handleAddToCart = async (product) => {
+  const token = localStorage.getItem("token"); // ✅ always latest
   if (!token) {
     toast.error("❌ Please log in to add items to your cart!");
     return;
   }
+
   try {
     const variant = product.variants?.length ? product.variants[0] : null;
     const price = variant ? variant.price : product.price;
@@ -84,7 +100,7 @@ const handleAddToCart = async (product) => {
 };
 
 
-  // Filter
+  // ✅ filter products
   const filteredProducts = products.filter((p) => {
     const matchesSearch =
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -161,7 +177,6 @@ const handleAddToCart = async (product) => {
                   >
                     Add to Cart
                   </button>
-
                 </div>
               </div>
             ))}
